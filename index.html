@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="icon" href="./logo/5 Web Apps Which Show Us How To Make Use Of QR Codes Differently.jpg">
+  </head>
+  <body>
+    <div class="container">
+      <p>Enter Your text or URL</p>
+      <input id="qrtext" type="text" placeholder="Text Or URL" />
+      <div id="imgbox" class="hidden">
+        <img src="" id="qrimage" />
+      </div>
+      <button onclick="generate();checkInput()">Generate</button>
+      <p id="message"></p>
+    </div>
+
+    <script>
+      let imgbox = document.getElementById("imgbox");
+      let qrimage = document.getElementById("qrimage");
+      let qrtext = document.getElementById("qrtext");
+
+      function generate() {
+        qrimage.src =
+          " https://api.qrserver.com/v1/create-qr-code/?size=150x150&data= " +
+          qrtext.value;
+        imgbox.classList.add("show-img");
+      }
+
+      function checkInput() {
+        var input = document.getElementById("qrtext").value;
+        var message = document.getElementById("message");
+        var content = document.getElementById("content");
+
+        if (input.trim() === "") {
+          message.textContent = "Input box cannot be empty!";
+          imgbox.classList.add("hidden");
+        } else {
+          message.textContent = "";
+          imgbox.classList.remove("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>
