@@ -84,7 +84,7 @@ This project uses the following public API:
 
 ### ✍️ Author
 
-  * **Arjun Dipunath** - (You can add your GitHub profile link here)
+  * **Arjun Dipunath** - (@arjundipunath)
 
 -----
 
